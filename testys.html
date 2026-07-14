@@ -1,0 +1,37 @@
+<section class="container" style="padding-top: 2rem; padding-bottom: 4rem;">
+    <h2 class="section-title" style="text-align: center;">What Our Clients Say</h2>
+    
+    <div class="testimonial-wrapper" style="position: relative; max-width: 800px; margin: 2rem auto; padding: 0 40px;">
+        
+        <button id="prevTestimonial" aria-label="Previous Testimonial" style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); background: transparent; border: none; cursor: pointer; font-size: 1.8rem; color: inherit; z-index: 10; padding: 10px;">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <!-- Dedicated viewport strictly for hiding overflow -->
+        <div class="testimonial-viewport" style="overflow: hidden; width: 100%;">
+            <div class="testimonial-track" id="testimonialTrack" style="display: flex; transition: transform 0.4s ease-in-out; align-items: center;">
+                
+                <div class="testimonial-slide" style="flex: 0 0 100%; box-sizing: border-box; text-align: center; padding: 0 20px;">
+                    <p style="font-size: 1.20rem; font-style: italic; line-height: 1.6;">"Joe and his team completely transformed our backyard into a peaceful retreat. The craftsmanship is incredible. Highly recommend them!"</p>
+                    <h4 style="margin-top: 1rem; font-weight: 600;">- John Doe, Walnut Creek</h4>
+                </div>
+
+                <div class="testimonial-slide" style="flex: 0 0 100%; box-sizing: border-box; text-align: center; padding: 0 20px;">
+                    <p style="font-size: 1.20rem; font-style: italic; line-height: 1.6;">"Professional, clean, and the koi are absolutely thriving. The waterfall feature is now the centerpiece of our home."</p>
+                    <h4 style="margin-top: 1rem; font-weight: 600;">- Jane Doe, San Jose</h4>
+                </div>
+
+                <div class="testimonial-slide" style="flex: 0 0 100%; box-sizing: border-box; text-align: center; padding: 0 20px;">
+                    <p style="font-size: 1.20rem; font-style: italic; line-height: 1.6;">"NorCal Pond rescued our old, leaky pond and made it look brand new. Their weekly maintenance service is top tier."</p>
+                    <h4 style="margin-top: 1rem; font-weight: 600;">- Judes underpaid workers, Concord</h4>
+                </div>
+
+            </div>
+        </div>
+
+        <button id="nextTestimonial" aria-label="Next Testimonial" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); background: transparent; border: none; cursor: pointer; font-size: 1.8rem; color: inherit; z-index: 10; padding: 10px;">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+    </div>
+</section>

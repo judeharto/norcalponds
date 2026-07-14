@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NorCal Pond & Water Gardens | Home</title>
+    
+    <meta name="description" content="Pond construction, building, and maintenance in the San Francisco Bay Area.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://norcalpond.com">
+    <meta property="og:title" content="NorCal Pond & Water Garden">
+    <meta property="og:description" content="Pond construction, building, and maintenance in the San Francisco Bay Area.">
+    <meta property="og:image" content="https://norcalpond.com/pictures/favicon.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://norcalpond.com">
+    <meta name="twitter:title" content="NorCal Pond & Water Garden">
+    <meta name="twitter:description" content="Pond construction, building, and maintenance in the San Francisco Bay Area.">
+    <meta name="twitter:image" content="https://norcalpond.com/pictures/favicon.png">
+
+    <link rel="icon" type="image/png" href="pictures/favicon.png">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="pictures/favicon.png" alt="NorCal Pond Logo">
+                <span style="color: var(--clr-deep-water, #005f73);">NorCal Pond</span>
+            </a>
+            
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+    
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="our-story.html">Our Story</a></li>
+                    <li><a href="pond-care.html">Pond Care</a></li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <video autoplay muted loop playsinline>
+                <source src="videos/pond.mp4" type="video/mp4">
+                Update your browser.
+            </video>            
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 style="color: white;">NorCal Pond & Water Gardens</h1>
+                <p>We are dedicated to creating stunning water features that enhance the beauty of your outdoor space.</p>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">Welcome to Your Private Oasis</h2>
+            <div class="content-block" style="text-align: center; max-width: 900px; margin: 0 auto;">
+                <p>At Norcal Pond, we love water gardens. We want your outdoor living space to be the very best it can be and take immense pride in maintaining the beauty and functionality of your water feature.</p>
+                
+                <img src="pictures/gal5.jpg" alt="Beautiful Koi Pond" class="featured-image" style="display: block; margin: 2rem auto; max-width: 100%;">
+                
+                <p>Whether you're looking to install a new pond or need regular maintenance for an existing one, we've got you covered. Trust us to provide the care and attention your pond deserves, so all you have to do is sit back and enjoy it.</p>
+                
+                <img src="pictures/gal10.jpg" alt="Water Garden Waterfall" class="featured-image" style="display: block; margin: 2rem auto; max-width: 100%;">
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-container" style="text-align: center;">
+            <h3>NorCal Pond & Water Gardens</h3>
+            <p>Concord, CA</p>
+            <p>Call Us: (510) 907-0204</p>
+            <p>Email: norcalpond@gmail.com</p>
+            
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="our-story.html">Our Story</a>
+                <a href="pond-care.html">Pond Care</a>
+                <a href="media.html">Media</a>
+                <a href="contact.html">Contact</a> 
+            </div>
+            
+            <div class="social-icons">
+                <a href="https://www.instagram.com/norcal_pond/" target="_blank" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/people/Norcal-Pond-and-Water-Gardens/61578142704819/" target="_blank" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+            </div>
+    
+            <p class="copyright">&copy; 2026 NorCal Pond & Water Gardens. All rights reserved.</p>
+        </div>
+
+        <p class="credits">Website created by Jude Harto</p>
+
+    </footer>
+
+    <script src="assets/mobile.js"></script>
+
+    <script>
+        const playLoopingAudio = () => {
+            const targetVolume = 0.3;
+            
+            const audio1 = new Audio('sounds/waterfall.mp3');
+            const audio2 = new Audio('sounds/waterfall.mp3');
+            
+            audio1.volume = targetVolume;
+            audio2.volume = targetVolume;
+
+            const setupCrossfade = (current, next) => {
+                current.addEventListener('timeupdate', function() {
+                    // Trigger next audio to play 0.4 seconds before current track ends to kill the gap
+                    if (this.duration - this.currentTime < 0.4 && next.paused) {
+                        next.currentTime = 0;
+                        next.play().catch(err => console.error("Playback failed:", err));
+                    }
+                });
+                
+                current.addEventListener('ended', function() {
+                    this.currentTime = 0; 
+                });
+            };
+
+            setupCrossfade(audio1, audio2);
+            setupCrossfade(audio2, audio1);
+
+            // Initial Play with fade-in effect
+            audio1.volume = 0;
+            audio1.play().then(() => {
+                let vol = 0;
+                const fadeIn = setInterval(() => {
+                    vol += 0.05;
+                    if (vol >= targetVolume) {
+                        audio1.volume = targetVolume;
+                        clearInterval(fadeIn);
+                    } else {
+                        audio1.volume = vol;
+                    }
+                }, 100);
+                
+                document.removeEventListener('click', playLoopingAudio);
+            }).catch(err => console.error("Playback failed:", err));
+        };
+
+        document.addEventListener('click', playLoopingAudio);
+
+            document.addEventListener('DOMContentLoaded', () => {
+            const track = document.getElementById('testimonialTrack');
+            const slides = document.querySelectorAll('.testimonial-slide');
+            const prevBtn = document.getElementById('prevTestimonial');
+            const nextBtn = document.getElementById('nextTestimonial');
+            
+            let currentIndex = 0;
+            const totalSlides = slides.length;
+
+            const updateSlider = () => {
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            };
+
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateSlider();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                updateSlider();
+            });
+        });
+    </script>
+    <script src="assets/credits.js"></script>
+
+</body>
+</html>

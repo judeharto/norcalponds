@@ -1,0 +1,1 @@
+print("bro i aint making a server for ts bro really thought")
