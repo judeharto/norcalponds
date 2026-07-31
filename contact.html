@@ -35,12 +35,50 @@
     </header>
 
 <main class="container">
-    <h1 class="section-title">Contact</h1>
+    <h1 class="section-title" style="text-align: center;">Contact</h1>
     
-    <div class="content-block" style="text-align: center;">
-        <p>We’d love to hear from you. Whether you have questions about your water feature or want to schedule a consultation, feel free to reach out to us through any of the channels below.</p>
+    <div class="content-block" style="text-align: center; max-width: 800px; margin: 0 auto;">
+        <p>We’d love to hear from you. Whether you have questions about your water feature or want to schedule a consultation, feel free to reach out to us through the form or any of the channels below.</p>
         
-        <div style="margin-top: 3rem; display: flex; flex-direction: column; gap: 1.5rem; align-items: center;">
+        <!-- FormSubmit Contact Form -->
+        <form action="https://formsubmit.co/norcalpond@gmail.com" method="POST" style="max-width: 600px; margin: 3rem auto; display: flex; flex-direction: column; gap: 1.5rem; text-align: left; background: #f9f9f9; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+            
+            <!-- Honeypot for spam protection -->
+            <input type="text" name="_honey" style="display:none">
+            <!-- Disables the FormSubmit Captcha page for a smoother user experience -->
+            <input type="hidden" name="_captcha" value="false">
+            <!-- Custom subject line for your inbox -->
+            <input type="hidden" name="_subject" value="New Website Inquiry for NorCal Pond">
+            <!-- Optional: Redirect back to contact page after sending -->
+            <input type="hidden" name="_next" value="https://norcalpond.com/contact.html">
+
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                <label for="email" style="font-weight: 600; color: var(--clr-deep-water, #005f73);">Email Address *</label>
+                <input type="email" id="email" name="email" required style="padding: 0.8rem; border: 1px solid #ccc; border-radius: 4px; font-family: inherit; font-size: 1rem;">
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                <label for="phone" style="font-weight: 600; color: var(--clr-deep-water, #005f73);">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required style="padding: 0.8rem; border: 1px solid #ccc; border-radius: 4px; font-family: inherit; font-size: 1rem;">
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                <label for="name" style="font-weight: 600; color: var(--clr-deep-water, #005f73);">Full Name *</label>
+                <input type="text" id="name" name="name" required style="padding: 0.8rem; border: 1px solid #ccc; border-radius: 4px; font-family: inherit; font-size: 1rem;">
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                <label for="message" style="font-weight: 600; color: var(--clr-deep-water, #005f73);">Message *</label>
+                <textarea id="message" name="message" rows="5" required style="padding: 0.8rem; border: 1px solid #ccc; border-radius: 4px; font-family: inherit; font-size: 1rem; resize: vertical;"></textarea>
+            </div>
+
+            <button type="submit" style="margin-top: 0.5rem; padding: 1rem; background-color: var(--clr-deep-water, #005f73); color: white; border: none; border-radius: 4px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: opacity 0.2s;">Send Message</button>
+        </form>
+        
+        <hr style="border: 0; height: 1px; background: #ddd; margin: 3rem 0;">
+
+        <!-- Direct Contact Info -->
+        <div style="display: flex; flex-direction: column; gap: 1.5rem; align-items: center;">
             <div style="font-size: 1.2rem;">
                 <strong>Phone:</strong> <a href="tel:5109070204" style="color: var(--clr-primary); text-decoration: none;">(510) 907-0204</a>
             </div>
@@ -50,8 +88,8 @@
             </div>
 
             <div style="margin-top: 1rem; display: flex; gap: 2rem; font-size: 1.2rem;">
-                <a href="https://www.facebook.com/people/Norcal-Pond-and-Water-Gardens/61578142704819/" style="color: var(--clr-deep-water); font-weight: 600; text-decoration: none;">Facebook</a>
-                <a href="https://www.instagram.com/norcal_pond/" style="color: var(--clr-deep-water); font-weight: 600; text-decoration: none;">Instagram</a>
+                <a href="https://www.facebook.com/people/Norcal-Pond-and-Water-Gardens/61578142704819/" style="color: var(--clr-deep-water, #005f73); font-weight: 600; text-decoration: none;">Facebook</a>
+                <a href="https://www.instagram.com/norcal_pond/" style="color: var(--clr-deep-water, #005f73); font-weight: 600; text-decoration: none;">Instagram</a>
             </div>
         </div>
     </div>
@@ -86,10 +124,9 @@
     </div>
 
     <p class="credits">Website created by Jude Harto</p>
-
 </footer>
 
 <script src="assets/mobile.js"></script>
 
 </body>
-</main>
+</html>
